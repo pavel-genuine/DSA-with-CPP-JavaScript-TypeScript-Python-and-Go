@@ -43,6 +43,7 @@ typedef pair<int,int> pr;
     pq.push(make_pair(6,12));
     pq.push(make_pair(8,2));
 
+
     while (!pq.empty())
     {
         cout << pq.top().first<<'|'<< pq.top().second<< endl;
