@@ -1,4 +1,4 @@
-#include<iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -91,7 +91,17 @@ void spacePrint(int level){
     }
 }
 
+void verticleOrder(treeNode* root, int D, map<int, vector<int>> &M){
+
+  if(root==NULL) return;
+
+  M[D].push_back(root->data);
+  verticleOrder(root->leftChild,D-1,M);
+  verticleOrder(root->rightChild,D+1,M);
+}
+
 int main()
+
 {
     int n;
     cin>>n;
@@ -132,5 +142,35 @@ int main()
     cout<<"Preorder Traversal : "<< preorderTraversal << endl;
     cout<<"Postorder Traversal : "<< postorderTraversal << endl;
 
+    map<int, vector<int>> M;
+
+    verticleOrder(allNodes[0],0,M);
+
+    for(auto i:M){
+        cout <<i.first<<":";
+        for(int j=0;j<i.second.size();j++){
+            cout <<i.second[j]<< " ";
+        }
+
+        cout << endl;
+    }
+
+
     return 0;
 }
+
+
+/*
+
+9
+0 1 2
+1 3 4
+2 5 6
+3 -1 -1
+4 -1 -1
+5 7 8
+6 -1 -1
+7 -1 -1
+8 -1 -1
+
+*/
