@@ -10,9 +10,15 @@ private:
 
 public:
     string name;
-    void setHeight(int h){
-    height = h;
-}
+    void setHeight(int h)
+    {
+        height = h;
+    }
+
+    void setHeight(int h)
+    {
+        height = h;
+    };
 
     int getHeight()
     {
@@ -24,6 +30,12 @@ public:
         cout << "call the sound";
     }
 };
+
+//defining method outside class
+void Animal::setHeight(int h)
+{
+    height = h;
+}
 
 // Derived class :inheritance
 class Dog : public Animal
@@ -41,6 +53,7 @@ class MyDog : public Dog
 {
 public:
     int age;
+    //polymorphism
     void animalSound()
     {
         cout << "new barking";
@@ -53,7 +66,6 @@ public:
         this->animalSound();
     }
 };
-
 
 int main()
 {
