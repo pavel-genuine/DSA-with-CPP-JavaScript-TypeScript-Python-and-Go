@@ -10,6 +10,7 @@ private:
 
 public:
     string name;
+
     void setHeight(int h)
     {
         height = h;
@@ -31,7 +32,7 @@ public:
     }
 };
 
-//defining method outside class
+// defining method outside class
 void Animal::setHeight(int h)
 {
     height = h;
@@ -46,6 +47,9 @@ public:
     {
         cout << "barking";
     }
+
+    // virtual method for abstraction
+    virtual void breedOfDog() = 0;
 };
 
 // mutilevel inheritance
@@ -53,10 +57,16 @@ class MyDog : public Dog
 {
 public:
     int age;
-    //polymorphism
+    // polymorphism
     void animalSound()
     {
         cout << "new barking";
+    }
+
+    // defining the virtual method
+    void breedOfDog()
+    {
+        cout << "hybride";
     }
     MyDog(int age, string name, string food)
     {
@@ -74,9 +84,6 @@ int main()
     myAimal.name = "jerry";
     myAimal.setHeight(2);
     myAimal.getHeight();
-
-    Animal thisAnimal();
-
     MyDog myDog(12, "jj", "bone");
 
     return 0;
