@@ -49,7 +49,7 @@ public:
     }
 
     // virtual method for abstraction
-    virtual void breedOfDog() = 0;
+    virtual void breed() = 0;
 };
 
 // mutilevel inheritance
@@ -64,10 +64,11 @@ public:
     }
 
     // defining the virtual method
-    void breedOfDog()
+    void breed()
     {
         cout << "hybride";
     }
+
     MyDog(int age, string name, string food)
     {
         this->age = age;
@@ -84,7 +85,7 @@ int main()
     myAimal.name = "jerry";
     myAimal.setHeight(2);
     myAimal.getHeight();
-    MyDog myDog(12, "jj", "bone");
+    MyDog myDog(12, "jerry2", "bone");
 
     return 0;
 }
